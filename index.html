@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+
+  <!-- Primera pantalla de press start -->
+    
+  <section class="seccionVisible seccionVisible1" id="fase1">
+    <div class="general general1">
+        <button onclick="cambiaPantalla(2)">PRESS START</button>
+        
+    </div>
+
+</section>
+
+<!-- Segunda pantalla parrilla de personajes -->
+
+<section class="seccionVisible" id="fase2" style="display:none">
+    <div class="general general2" id= general2>
+        <button onclick="cambiaPantalla(3)">FIGHT</button>
+    </div>
+</section>
+
+<!-- Tercera pantalla enfrentamiento pre-lucha -->
+
+<section class="seccionVisible" id="fase3" style="display:none">
+    <div class="general general3">
+        <button onclick="cambiaPantalla(1)">CONTINUE?</button>
+    </div>
+</section>
+
+
+
+<script src="JS/luchadores.js"></script>
+<script src="JS/utilidades.js"></script>   
+<script src="JS/app.js"></script> 
+</body>
+</html>

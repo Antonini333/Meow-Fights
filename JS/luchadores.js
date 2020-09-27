@@ -1,15 +1,17 @@
 
 class Fighter {
-    constructor(name, attack, defense, PP, luck){
+    constructor(nombre, ataque, defensa, agilidad, suerte){
 
-        this.name = name;
-        this.attack = attack;
-        this.defense = defense;
-        this.PP = PP;
-        this.luck = luck;
-        this.HP = 100;
+        this.nombre = nombre;
+        this.ataque = ataque;
+        this.defensa = defensa;
+        this.agilidad = agilidad;
+        this.suerte = suerte;
+        this.vida = 100;
+
     }
 }
+
 
     let f1 = new Fighter ("The Dude", 3, 2, 5, 7);
     let f2 = new Fighter ("Hunter Thompson", 3, 2, 5, 7);
@@ -18,54 +20,39 @@ class Fighter {
     let f5 = new Fighter ("Pato Donald", 3, 2, 5, 7);
     let f6 = new Fighter ("Random Cat", 3, 2, 5, 7);
 
-   
-arrayallFighters= [f1, f2, f3, f4, f5, f6];
+   //traductor
+let allFighters = {
+    "1": f1,
+    "2": f2,
+    "3": f3,
+    "4": f4,
+    "5": f5,
+    "6": f6
+}
 
-let arraySeleccionados = [];
-const maximaSeleccionDePJ = 2;
+    let availableFighters = document.getElementsByClassName("fighter");
+    let selectedFighters1 = [];
+    let selectedFighters2 = [];
 
-const selectPJ = (pos) => {
-    // Solo seleccionamos mientras no superemos el limite
-    if (arraySeleccionados.length < maximaSeleccionDePJ) {
-      arraySeleccionados.push(arrayallFighters[parseInt(pos)]);
-      asignarParaPelear()
-    }}
-
-    const asignarParaPelear = () => {
-        if (arraySeleccionados[0]) {
-          pjSelec1 = arraySeleccionados[0];
-        }
-      
-        if (arraySeleccionados[1]) {
-          pjSelec2 = arraySeleccionados[1];
-        }
-      };
-
-
-
-
-
-
-let pjSelec1;
-let pjSelec2;
-
-    /*let availableFighters = document.getElementsByClassName ('fighter');
-    let selectedFighters = [];
-
-    console.log(availableFighters)
-
-   for (let fighter = 0; fighter < availableFighters.length; fighter++){
-       availableFighters[fighter].addEventListener('click', () => {
+    for (let fighter = 0; fighter < availableFighters.length; fighter++)
+    {availableFighters[fighter].addEventListener('click', () => {
         selectFighter(availableFighters[fighter].id)
-       });
-    }
+});
+}
 
-    let selectFighter = function(selected){
-    
-        selectedFighters.push(allFighters[selected]);
-console.log(selectedFighters)
-    }
+let selectFighter = function(selected){
+    if(selectedFighters1.length < maxNumPlayer){
+    selectedFighters1.push(allFighters[selected]);
 
-   
-    const maxNumPlayer = 2;
-*/
+}else if (selectedFighters2.length < maxNumPlayer){
+        selectedFighters2.push(allFighters[selected]);
+}else if (selectedFighters2.length = maxNumPlayer){
+    console.log("FIGHT");        
+
+}};
+
+
+const maxNumPlayer = 2;
+console.log(selectedFighters1);
+console.log(selectedFighters2);
+

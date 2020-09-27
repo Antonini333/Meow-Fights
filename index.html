@@ -33,7 +33,7 @@
                 <div><img src="/img/pudge.png" class="f6" id="cat6"><h2>Pudge</h2></div>
         </div>
         <div class="container2">
-<h1 class="text">You must choose a Meow in order to make it fight another Meow</h1><br>
+        <h1 class="text">You must choose a Meow in order to make it fight against another Meow</h1><br>
 
 
             <h1 class="textchoose" id="textChoose"></h1>
@@ -45,8 +45,43 @@
 
 <section class="seccionVisible" id="fase3" style="display:none">
     <div class="general general3">
+        <div class="columna columna1">
+                
+            <img id="imagenJugador1" src="">
+
+            <p id="nombreJugador1"></p>
+
+            <div class="cajaVida">
         
-        <button onclick="cambiaPantalla(1)">CONTINUE?</button>
+                <p id="vidaJugador1"></p>
+
+            </div>
+        </div>
+
+        <div class="textBox">            
+            
+            <button id="botonAtacar" onclick="pulsaAtacar()" >ATACAR</button>
+        
+            <h1 class="texto" id="textoSelBatalla"></h1>
+            
+        </div>
+
+        <div class="columna columna2">
+            
+            <img id="imagenJugador2" src="">
+            
+            <p id="nombreJugador2"></p>
+            
+            <div class="cajaVida">
+
+                <p id="vidaJugador2"></p>
+
+            </div>
+            
+        </div>
+        
+    </div>
+
     </div>
 </section>
 

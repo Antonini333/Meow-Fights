@@ -16,7 +16,7 @@ class Fighter {
     let f3 = new Fighter ("Grumpy Cat", 8, 2, 5);
     let f4 = new Fighter ("Hover Kitty", 8, 2, 5);
     let f5 = new Fighter ("Lil' Bub", 8, 2, 5);
-    let f6 = new Fighter ("Pudge", 8, 2, 5);
+    let f6 = new Fighter ("Pudge", 8, 2, 5, 7);
 
         
  

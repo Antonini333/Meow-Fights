@@ -12,8 +12,6 @@ class Fighter {
 
     }
 }
-
-
     let f1 = new Fighter ("The Dude", 3, 2, 5, 7);
     let f2 = new Fighter ("Hunter Thompson", 3, 2, 5, 7);
     let f3 = new Fighter ("Renton", 3, 2, 5, 7);
@@ -24,16 +22,126 @@ class Fighter {
     
 
 
-//traductor
-let allFighters = {
+/*traductor
+
+let traductor = {
     "1": f1,
     "2": f2,
     "3": f3,
     "4": f4,
     "5": f5,
     "6": f6
+}  */
+
+ 
+
+const traductor = (id) =>{
+    switch (id) {
+
+        case "cat1":
+            return f1;
+        
+        case "cat2":
+            return f2;
+
+        case "cat3":
+            return f3;
+
+        case "cat4":
+            return f4;
+
+        case "cat5":
+            return f5;
+
+        case "cat6":
+            return f6;
+
+        default:
+            "No has escogido un personaje"
+        break;
+    }
 }
 
+
+
+
+let cat1 = document.getElementById("cat1");
+let cat2 = document.getElementById("cat2");
+let cat3 = document.getElementById("cat3");
+let cat4 = document.getElementById("cat4");
+let cat5 = document.getElementById("cat5");
+let cat6 = document.getElementById("cat6");
+
+let player1 = "";
+let player2 = "";
+
+let textChoose = document.getElementById("textChoose");
+textChoose.innerText = "Jugador 1, elige personaje";
+
+let pointedCat = (event) =>{
+   let pointed = event.target.id;
+    if (player1 === ""){
+        player1 = traductor(pointed);
+        let textChoose = document.getElementById("textChoose");
+        textChoose.innerText = "Jugador 2, elige personaje";
+   }else{ player2 = traductor(pointed)
+         cambioPantalla(3);
+   }if (player2 === player1){
+       cambioPantalla(2);
+   }
+     }
+
+
+cat1.addEventListener('click', pointedCat);
+cat2.addEventListener('click', pointedCat);
+cat3.addEventListener('click', pointedCat);
+cat4.addEventListener('click', pointedCat);
+cat5.addEventListener('click', pointedCat);
+cat6.addEventListener('click', pointedCat);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 // Método selección equipo evento onClick
     let availableFighters = document.getElementsByClassName("fighter");
     let selectedFighters1 = [];
@@ -64,3 +172,4 @@ console.log("Player1", selectedFighters1);
 console.log("Player2", selectedFighters2);
 
 
+*/

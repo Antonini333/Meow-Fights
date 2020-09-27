@@ -1,12 +1,10 @@
-body{
+*{
     margin: 0;
-    
 }
 .seccionVisible {
     background-color: black;
     width: 100vw;
     height: 100vh;
-
 }
 
 .general {
@@ -16,62 +14,44 @@ body{
 
 .general1 {
     background-color: blue;
-    background-image: url(/img/fondointro.jpg);
 }
 
 .general2 {
-    background-color: green;
-    
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
 
 }
 
 .container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    width: 97,3vw;
-    height: 95vh;
-    padding: 1em;
-    background-image: url(/img/fondopantalla.jpg);
+    width: 70%;
+    border: 0.4em solid pink;
+    margin-left: 10%;
+    margin-top: 1%;
+    object-fit: contain;
+}
+
+.f1{
+    border: 0.5em inset rgba(12, 12, 12, 0.39);
+    border-radius: 35%;
+    
+}
+
+.f1:hover{
+    border: 0.5em inset rgba(185, 10, 10, 0.603);
+    border-radius: 35%;
+
 }
 
 .cards{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #24212177;
-    width: 80vw;
-    height: 40vh;
-    border: 0.3em inset rgba(0, 0, 0, 0.178);
-}
-
-
-
-
-
-
-
-.selected{
-    display: flex;
-    flex-flow: row nowrap;
-    background-color: #24212177;
-    width: 80vw;
-    height: 40vh;
-    border: 0.3em inset rgba(0, 0, 0, 0.178);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 5%;
     
 }
 
 
 
 .general3 {
-    background-image: url(/img/bomb.png)
-    
-}
-
-button {
-	background: #eee;
-	padding: 10px 25px;
-	margin-bottom: 15px;
-	display: block;
+    background-color: red;
 }

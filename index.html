@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 <link rel="stylesheet" href="CSS/style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
 
@@ -24,72 +25,31 @@
     <div class="general general2" id= general2>
         <div class="container">
             <div class="cards" id="roster">
-                <div class="pj">
-                    <div class="text">Name</div>
-                    <div class="text">HP</div>
-                    <div class="text">Armor</div>
-                    <div class="text">Armor</div>
-                </div>
-                <div class="pj">
-                    <div class="text">Name</div>
-                    <div class="text">HP</div>
-                    <div class="text">Armor</div>
-                    <div class="text">Armor</div>
-                </div> 
-                <div class="pj">
-                    <div class="text">Name</div>
-                    <div class="text">HP</div>
-                    <div class="text">Armor</div>
-                    <div class="text">Armor</div>
-                </div>
-                <div class="pj">
-                    <div class="text">Name</div>
-                    <div class="text">HP</div>
-                    <div class="text">Armor</div>
-                    <div class="text">Armor</div>
-                </div>
-                <div class="pj">
-                    <div class="text">Name</div>
-                    <div class="text">HP</div>
-                    <div class="text">Armor</div>
-                    <div class="text">Armor</div>
-                </div>
-                <div class="pj">
-                    <div class="text">Name</div>
-                    <div class="text">HP</div>
-                    <div class="text">Armor</div>
-                    <div class="text">Armor</div>
-                </div>
-    
+                <div class="fighter">f1</div>
+                <div class="fighter">f2</div>
+                <div class="fighter">f3</div>
+                <div class="fighter">f4</div>
+                <div class="fighter">f5</div>
+                <div class="fighter">f6</div>
             </div>
-            <div class="selected" id="selected">
-                <div class="pj">
-                    <div class="text">Name</div>
-                    <div class="text">HP</div>
-                    <div class="text">Armor</div>
-                    <div class="text">Armor</div>
-                </div>
-                <div class="pj">
-                    <div class="text">Name</div>
-                    <div class="text">HP</div>
-                    <div class="text">Armor</div>
-                    <div class="text">Armor</div>
-                </div>
+
+                <div class="selected" id="selected">
+                    
                 
-            </div>
-            <div class="botonera">
-                <h3>Simulación de pelea, abre la consola</h3>
-                <button onclick="simularBatalla()"> FIGHT!</button>
-            </div>
-        </div>
-        <button onclick="cambiaPantalla(3)">cambiapantalla</button>
-    </div>
+                </div>
+    <button onclick="cambiaPantalla(3)">cambiapantalla</button>
+</div>
 </section>
 
 <!-- Tercera pantalla enfrentamiento pre-lucha -->
 
 <section class="seccionVisible" id="fase3" style="display:none">
     <div class="general general3">
+        <div class="pantalla3">
+        <div class="containerPlayer1"></div>
+        <div class="VS"></div>
+        <div class="containerPlayer2"></div>
+    </div>
         <button onclick="cambiaPantalla(1)">CONTINUE?</button>
     </div>
 </section>
@@ -99,5 +59,6 @@
 <script src="JS/luchadores.js"></script>
 <script src="JS/utilidades.js"></script>   
 <script src="JS/app.js"></script> 
+<script src="node_modules/jquery/dist/jquery.js"></script>
 </body>
 </html>

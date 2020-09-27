@@ -1,5 +1,6 @@
 body{
     margin: 0;
+    
 }
 .seccionVisible {
     background-color: black;
@@ -15,6 +16,7 @@ body{
 
 .general1 {
     background-color: blue;
+    background-image: url(/img/fondointro.jpg);
 }
 
 .general2 {
@@ -23,66 +25,91 @@ body{
 
 }
 
-
-
 .container{
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    width: 90vw;
-    height: 80vh;
+    width: 97,3vw;
+    height: 95vh;
     padding: 1em;
-    background-color: blueviolet;
+    background-image: url(/img/fondopantalla.jpg);
 }
 
 .cards{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: brown;
+    background-color: #24212177;
     width: 80vw;
-    height: 50vh;
+    height: 40vh;
+    border: 0.3em inset rgba(0, 0, 0, 0.178);
 }
 
-.selected{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: yellow;
-    width: 80vw;
-    height: 50vh;
-}
 
-.pj{
-    background-color: green;
+.fighter{
+    background-color: #24212177;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     width: 15em;
-    height: 15em;
+    height: 10em;
     margin-left: 1em;
     margin-right: 1em;
+    border: 0.3em inset rgba(0, 0, 0, 0.178);
+    border-radius: 20%;
 }
 
-.botonera{
+.selected{
     display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    background-color: rgb(181, 205, 92);
+    flex-flow: row nowrap;
+    background-color: #24212177;
+    width: 80vw;
+    height: 40vh;
+    border: 0.3em inset rgba(0, 0, 0, 0.178);
+    
 }
-
-
-.botonera button{
-    background-color: indianred;
-    font-size: 2em;
-}
-
 
 
 
 .general3 {
-    background-color: red;
+    background-image: url(/img/bomb.png)
+    
+}
+
+.pantalla3{
+    display: flex;
+    flex-direction: row;
+}
+
+.containerPlayer1{
+    background-color: #24212177;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 20em;
+    height: 35em;
+    margin: 1em;
+    border: 0.3em inset rgba(0, 0, 0, 0.178);
+    border-radius: 20%;
+
+}
+.containerPlayer2{
+    background-color: #24212177;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 20em;
+    height: 35em;
+    margin: 1em;
+    border: 0.3em inset rgba(0, 0, 0, 0.178);
+    border-radius: 20%;
+
+}
+
+.VS{
+    width: 35em;
 }

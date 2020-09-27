@@ -1,63 +1,42 @@
 //Constructor de luchadores
 
 class Fighter {
-    constructor(nombre, ataque, defensa, agilidad, suerte){
+    constructor(name, atk, dfs, luck){
 
-        this.nombre = nombre;
-        this.ataque = ataque;
-        this.defensa = defensa;
-        this.agilidad = agilidad;
-        this.suerte = suerte;
-        this.vida = 100;
+        this.name = name;
+        this.atk = atk;
+        this.dfs = dfs;
+        this.luck = luck;
+        this.HP = 200;
 
     }
 }
-    let f1 = new Fighter ("Colonel Meow", 3, 2, 5, 7);
-    let f2 = new Fighter ("Garfi", 3, 2, 5, 7);
-    let f3 = new Fighter ("Grumpy Cat", 3, 2, 5, 7);
-    let f4 = new Fighter ("Hover Kitty", 3, 2, 5, 7);
-    let f5 = new Fighter ("Lil' Bub", 3, 2, 5, 7);
-    let f6 = new Fighter ("Pudge", 3, 2, 5, 7);
+    let f1 = new Fighter ("Colonel Meow", 8, 2, 5);
+    let f2 = new Fighter ("Garfi", 8, 2, 5);
+    let f3 = new Fighter ("Grumpy Cat", 8, 2, 5);
+    let f4 = new Fighter ("Hover Kitty", 8, 2, 5);
+    let f5 = new Fighter ("Lil' Bub", 8, 2, 5);
+    let f6 = new Fighter ("Pudge", 8, 2, 5);
 
-    
-
-
-/*traductor
-
-let traductor = {
-    "1": f1,
-    "2": f2,
-    "3": f3,
-    "4": f4,
-    "5": f5,
-    "6": f6
-}  */
-
+        
  
-
+//traductor
 const traductor = (id) =>{
     switch (id) {
-
         case "cat1":
-            return f1;
-        
+        return f1;
         case "cat2":
-            return f2;
-
+        return f2;
         case "cat3":
-            return f3;
-
+        return f3;
         case "cat4":
-            return f4;
-
+        return f4;
         case "cat5":
-            return f5;
-
+        return f5;
         case "cat6":
-            return f6;
-
+        return f6;
         default:
-            "No has escogido un personaje"
+        "Error"
         break;
     }
 }
@@ -72,6 +51,7 @@ let cat4 = document.getElementById("cat4");
 let cat5 = document.getElementById("cat5");
 let cat6 = document.getElementById("cat6");
 
+
 let player1 = "";
 let player2 = "";
 
@@ -83,7 +63,7 @@ let pointedCat = (event) =>{
     if (player1 === ""){
         player1 = traductor(pointed);
         let textChoose = document.getElementById("textChoose");
-        textChoose.innerText = "PLAYER 2: CHOOSE MEOW";
+        textChoose.innerText = "TURN FOR PLAYER 2: CHOOSE YOUR MEOW";
    }else{ player2 = traductor(pointed)
          cambiaPantalla(3);
 
@@ -95,15 +75,23 @@ let pointedCat = (event) =>{
      }
 
 
-cat1.addEventListener('click', pointedCat);
-cat2.addEventListener('click', pointedCat);
-cat3.addEventListener('click', pointedCat);
-cat4.addEventListener('click', pointedCat);
-cat5.addEventListener('click', pointedCat);
-cat6.addEventListener('click', pointedCat);
+     cat1.addEventListener('click', pointedCat);
+     cat2.addEventListener('click', pointedCat);
+     cat3.addEventListener('click', pointedCat);
+     cat4.addEventListener('click', pointedCat);
+     cat5.addEventListener('click', pointedCat);
+     cat6.addEventListener('click', pointedCat);
 
 
+     const muestraPersonaje = (ev) => {
 
+        document.getElementById("imagenJugador1").src = player1.imagen;
+        document.getElementById("nombreJugador1").innerText = player1.nombre;
+        document.getElementById("vidaJugador1").innerText = player1.vida;
+        
+        document.getElementById("imagenJugador2").src = player2.imagen;
+        document.getElementById("nombreJugador2").innerText = player2.nombre;
+        document.getElementById("vidaJugador2").innerText = player2.vida;}
 
 
 

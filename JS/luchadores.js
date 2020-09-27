@@ -1,3 +1,4 @@
+//Constructor de luchadores
 
 class Fighter {
     constructor(nombre, ataque, defensa, agilidad, suerte){
@@ -20,7 +21,10 @@ class Fighter {
     let f5 = new Fighter ("Pato Donald", 3, 2, 5, 7);
     let f6 = new Fighter ("Random Cat", 3, 2, 5, 7);
 
-   //traductor
+    
+
+
+//traductor
 let allFighters = {
     "1": f1,
     "2": f2,
@@ -30,6 +34,7 @@ let allFighters = {
     "6": f6
 }
 
+// Método selección equipo evento onClick
     let availableFighters = document.getElementsByClassName("fighter");
     let selectedFighters1 = [];
     let selectedFighters2 = [];
@@ -40,19 +45,22 @@ let allFighters = {
 });
 }
 
+//Pusheamos luchadores a equipo 1 y 2 desde AllFighters
+
 let selectFighter = function(selected){
     if(selectedFighters1.length < maxNumPlayer){
-    selectedFighters1.push(allFighters[selected]);
+    selectedFighters1.push(allFighters[selected]) ;
 
 }else if (selectedFighters2.length < maxNumPlayer){
         selectedFighters2.push(allFighters[selected]);
 }else if (selectedFighters2.length = maxNumPlayer){
-    console.log("FIGHT");        
+    console.log("FIGHT"); //AQUI SE ACTIVARÍA EL BOTON DE FIGHT/CAMBIA PANTALLA POR CSS        
 
 }};
 
 
-const maxNumPlayer = 2;
-console.log(selectedFighters1);
-console.log(selectedFighters2);
+const maxNumPlayer = 1;
+console.log("Player1", selectedFighters1);
+console.log("Player2", selectedFighters2);
+
 

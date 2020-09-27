@@ -12,12 +12,12 @@ class Fighter {
 
     }
 }
-    let f1 = new Fighter ("The Dude", 3, 2, 5, 7);
-    let f2 = new Fighter ("Hunter Thompson", 3, 2, 5, 7);
-    let f3 = new Fighter ("Renton", 3, 2, 5, 7);
-    let f4 = new Fighter ("Liam Gallagher", 3, 2, 5, 7);
-    let f5 = new Fighter ("Pato Donald", 3, 2, 5, 7);
-    let f6 = new Fighter ("Random Cat", 3, 2, 5, 7);
+    let f1 = new Fighter ("Colonel Meow", 3, 2, 5, 7);
+    let f2 = new Fighter ("Garfi", 3, 2, 5, 7);
+    let f3 = new Fighter ("Grumpy Cat", 3, 2, 5, 7);
+    let f4 = new Fighter ("Hover Kitty", 3, 2, 5, 7);
+    let f5 = new Fighter ("Lil' Bub", 3, 2, 5, 7);
+    let f6 = new Fighter ("Pudge", 3, 2, 5, 7);
 
     
 
@@ -76,18 +76,21 @@ let player1 = "";
 let player2 = "";
 
 let textChoose = document.getElementById("textChoose");
-textChoose.innerText = "Jugador 1, elige personaje";
+textChoose.innerText = "PLAYER 1: CHOOSE MEOW";
 
 let pointedCat = (event) =>{
    let pointed = event.target.id;
     if (player1 === ""){
         player1 = traductor(pointed);
         let textChoose = document.getElementById("textChoose");
-        textChoose.innerText = "Jugador 2, elige personaje";
+        textChoose.innerText = "PLAYER 2: CHOOSE MEOW";
    }else{ player2 = traductor(pointed)
-         cambioPantalla(3);
+         cambiaPantalla(3);
+
    }if (player2 === player1){
-       cambioPantalla(2);
+    let textChoose = document.getElementById("textChoose");
+    textChoose.innerText = "CAN'T CHOOSE SAME MEOW"
+       cambiaPantalla(2);
    }
      }
 

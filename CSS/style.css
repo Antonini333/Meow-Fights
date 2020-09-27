@@ -23,24 +23,103 @@
 
 }
 
-.container{
+.container1{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 5%;
     width: 70%;
     border: 0.4em solid pink;
-    margin-left: 10%;
+    margin-left: 15%;
     margin-top: 1%;
-    object-fit: contain;
+    
 }
+
+
+.container2{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    height: 50%;
+    width: 60%;
+    border: 0.4em solid pink;
+    margin-left: 15%;
+    padding: 4em;
+    
+}
+
 
 .f1{
     border: 0.5em inset rgba(12, 12, 12, 0.39);
     border-radius: 35%;
+    max-inline-size: 8em;
     
 }
 
 .f1:hover{
     border: 0.5em inset rgba(185, 10, 10, 0.603);
     border-radius: 35%;
+    max-inline-size: 9.5em;
 
+}
+
+.f2{
+    border: 0.5em inset rgba(12, 12, 12, 0.39);
+    border-radius: 35%;
+    max-inline-size: 8em;
+}
+
+.f2:hover{
+    border: 0.5em inset rgba(185, 10, 10, 0.603);
+    border-radius: 35%;
+    max-inline-size: 9.5em;
+}
+
+.f3{
+    border: 0.5em inset rgba(12, 12, 12, 0.39);
+    border-radius: 35%;
+    max-inline-size: 8em;
+}
+
+.f3:hover{
+    border: 0.5em inset rgba(185, 10, 10, 0.603);
+    border-radius: 35%;
+    max-inline-size: 9.5em;
+}
+
+.f4{
+    border: 0.5em inset rgba(12, 12, 12, 0.39);
+    border-radius: 35%;
+    max-inline-size: 8em;
+}
+
+.f4:hover{
+    border: 0.5em inset rgba(185, 10, 10, 0.603);
+    border-radius: 35%;
+    max-inline-size: 9.5em;
+
+}
+
+.f5{
+    border: 0.5em inset rgba(12, 12, 12, 0.39);
+    border-radius: 35%;
+    max-inline-size: 8em;
+}
+
+.f5:hover{
+    border: 0.5em inset rgba(185, 10, 10, 0.603);
+    border-radius: 35%;
+    max-inline-size: 9.5em;
+}
+
+.f6{
+    border: 0.5em inset rgba(12, 12, 12, 0.39);
+    border-radius: 35%;
+    max-inline-size: 8em;
+}
+
+.f6:hover{
+    border: 0.5em inset rgba(185, 10, 10, 0.603);
+    border-radius: 35%;
+    max-inline-size: 9.5em;
 }
 
 .cards{
@@ -49,6 +128,8 @@
     grid-gap: 5%;
     
 }
+
+
 
 
 

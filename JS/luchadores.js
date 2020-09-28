@@ -1,22 +1,41 @@
 //Constructor de luchadores
 
 class Fighter {
-    constructor(name, atk, dfs, luck){
+    constructor(name, atk, dfs, luck, img){
 
         this.name = name;
         this.atk = atk;
         this.dfs = dfs;
         this.luck = luck;
+        this.img = img;
         this.HP = 200;
 
     }
+    attack = (enemy) => {
+        
+        let damage = this.atk - (enemy.dfs + enemy.luck);
+        damage = damage - this.luck;
+        
+        enemy.HP = enemy.HP - damage;
+        actBarrasVida();
+        
+
+        battleViewer.innerText = 
+        (`${this.name} ataca a 
+        ${atacado.name} y le hace 
+        ${damage} de daño`);
+    }
 }
-    let f1 = new Fighter ("Colonel Meow", 8, 2, 5);
-    let f2 = new Fighter ("Garfi", 8, 2, 5);
-    let f3 = new Fighter ("Grumpy Cat", 8, 2, 5);
-    let f4 = new Fighter ("Hover Kitty", 8, 2, 5);
-    let f5 = new Fighter ("Lil' Bub", 8, 2, 5);
-    let f6 = new Fighter ("Pudge", 8, 2, 5, 7);
+
+
+
+
+    let f1 = new Fighter ("Colonel Meow", 8, 2, 5, "img/colonelBattle.png");
+    let f2 = new Fighter ("Garfi", 8, 2, 5, "img/garfiBattle.jpg");
+    let f3 = new Fighter ("Grumpy Cat", 8, 2, 5, "img/grumpyBattle.jpg");
+    let f4 = new Fighter ("Hover Kitty", 8, 2, 5, "img/hoverkitty.jpg");
+    let f5 = new Fighter ("Lil' Bub", 8, 2, 5, "img/lilbubBattle");
+    let f6 = new Fighter ("Pudge", 8, 2, 5, 7, "img/pudgeBattle.jpg");
 
         
  
@@ -64,15 +83,18 @@ let pointedCat = (event) =>{
         player1 = traductor(pointed);
         let textChoose = document.getElementById("textChoose");
         textChoose.innerText = "TURN FOR PLAYER 2: CHOOSE YOUR MEOW";
-   }else{ player2 = traductor(pointed)
+
+   }else{ player2 = traductor(pointed);
          cambiaPantalla(3);
+         getCat();
+         actHealthPoints();
 
    }if (player2 === player1){
     let textChoose = document.getElementById("textChoose");
-    textChoose.innerText = "CAN'T CHOOSE SAME MEOW"
+    textChoose.innerText = "CAN'T CHOOSE SAME MEOW";
        cambiaPantalla(2);
    }
-     }
+     };
 
 
      cat1.addEventListener('click', pointedCat);
@@ -83,84 +105,35 @@ let pointedCat = (event) =>{
      cat6.addEventListener('click', pointedCat);
 
 
-     const muestraPersonaje = (ev) => {
+     const getCat = () => {
 
-        document.getElementById("imagenJugador1").src = player1.imagen;
-        document.getElementById("nombreJugador1").innerText = player1.nombre;
-        document.getElementById("vidaJugador1").innerText = player1.vida;
+        document.getElementById("p1Img").src = player1.img;
+        document.getElementById("p1Name").innerText = player1.name;
+        document.getElementById("p1HP").innerText = player1.HP;
         
-        document.getElementById("imagenJugador2").src = player2.imagen;
-        document.getElementById("nombreJugador2").innerText = player2.nombre;
-        document.getElementById("vidaJugador2").innerText = player2.vida;}
+        document.getElementById("p2Img").src = player2.img;
+        document.getElementById("p2Name").innerText = player2.name;
+        document.getElementById("p2HP").innerText = player2.HP;}
 
+        let battleViewer = document.getElementById("battleViewer");
+        
+        
+        const actHealthPoints = () => {
 
+            document.getElementById("p1HP").style.width = player1.HP + "%";
+            document.getElementById("p2HP").style.width = player2.HP + "%";
+        } ;        
+        
+        const attackButton = () => {
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-// Método selección equipo evento onClick
-    let availableFighters = document.getElementsByClassName("fighter");
-    let selectedFighters1 = [];
-    let selectedFighters2 = [];
-
-    for (let fighter = 0; fighter < availableFighters.length; fighter++)
-    {availableFighters[fighter].addEventListener('click', () => {
-        selectFighter(availableFighters[fighter].id)
-});
-}
-
-//Pusheamos luchadores a equipo 1 y 2 desde AllFighters
-
-let selectFighter = function(selected){
-    if(selectedFighters1.length < maxNumPlayer){
-    selectedFighters1.push(allFighters[selected]) ;
-
-}else if (selectedFighters2.length < maxNumPlayer){
-        selectedFighters2.push(allFighters[selected]);
-}else if (selectedFighters2.length = maxNumPlayer){
-    console.log("FIGHT"); //AQUI SE ACTIVARÍA EL BOTON DE FIGHT/CAMBIA PANTALLA POR CSS        
-
-}};
-
-
-const maxNumPlayer = 1;
-console.log("Player1", selectedFighters1);
-console.log("Player2", selectedFighters2);
-
-
-*/
+            turno++;
+        
+            if (turno % 2 === 0) {
+                
+                player1.golpear(player2);
+                getCat();
+        
+            }else{
+               player2.golpear(player1);
+                getCat();
+            }};

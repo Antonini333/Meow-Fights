@@ -34,9 +34,7 @@
         </div>
         <div class="container2">
         <h1 class="text">You must choose a Meow in order to make it fight against another Meow</h1><br>
-
-
-            <h1 class="textchoose" id="textChoose"></h1>
+        <h1 class="textchoose" id="textChoose"></h1>
         </div>
     </div>
 </section>
@@ -45,36 +43,33 @@
 
 <section class="seccionVisible" id="fase3" style="display:none">
     <div class="general general3">
-        <div class="columna columna1">
+        <div class="column columna1">
                 
-            <img id="imagenJugador1" src="">
-
-            <p id="nombreJugador1"></p>
-
-            <div class="cajaVida">
-        
-                <p id="vidaJugador1"></p>
+            <img id="p1Img" src="">
+            <p id="p1Name"></p>
+            <div class="HPBar">
+            <p id="p1HP"></p>
 
             </div>
         </div>
 
         <div class="textBox">            
             
-            <button id="botonAtacar" onclick="pulsaAtacar()" >ATACAR</button>
+            <button id="attackButton" onclick="attackButton()" >ATTACK</button>
         
-            <h1 class="texto" id="textoSelBatalla"></h1>
+            <h1 class="text1" id="battleViewer"></h1>
             
         </div>
 
-        <div class="columna columna2">
+        <div class="column columna2">
             
-            <img id="imagenJugador2" src="">
+            <img id="p2Img" src="">
             
-            <p id="nombreJugador2"></p>
+            <p id="p2Name"></p>
             
-            <div class="cajaVida">
+            <div class="HPBar">
 
-                <p id="vidaJugador2"></p>
+                <p id="p2HP"></p>
 
             </div>
             

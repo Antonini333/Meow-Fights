@@ -20,6 +20,27 @@ const cambiaPantalla = (valor) => {
 
     for(let pantalla of arrayFases){
         document.getElementById(pantalla).style.display = "none";
-        
     }
 }
+
+const reset = () => {
+
+    player1 = "";
+    player2 = "";
+
+    battleViewer.innerText = "";
+
+     f1 = new Fighter ("Colonel Meow", 8, 2, 5, "img/colonelBattle.png");
+     f2 = new Fighter ("Garfi", 8, 2, 5, "img/garfiBattle.jpg");
+     f3 = new Fighter ("Grumpy Cat", 8, 2, 5, "img/grumpyBattle.jpg");
+     f4 = new Fighter ("Hover Kitty", 8, 2, 5, "img/hoverkitty.jpg");
+     f5 = new Fighter ("Lil' Bub", 8, 2, 5, "img/lilbubBattle");
+     f6 = new Fighter ("Pudge", 8, 2, 5, 7, "img/pudgeBattle.jpg");
+
+    textChoose.innerText = "PLAYER 1: CHOOSE MEOW";
+
+}
+
+
+//elenco de funciones útiles que podremos utilizar a nuestro antojo en varios proyectos
+

@@ -1,4 +1,4 @@
-# juegoLucha
+# FightGame
 
 This is a basic project made out of HTML5, CSS3 and ECMAScript6.
 

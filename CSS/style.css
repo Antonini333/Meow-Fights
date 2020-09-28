@@ -17,6 +17,17 @@
     background-image: url(/img/fondointro.png);
 }
 
+.botonSwitch{
+
+    margin-top: 30em;
+    margin-left: 32em;
+    width: 25%;
+    height: 10%;
+    border: 0.3em inset black;
+    border-radius: 5%;
+    background-color: rgba(188, 143, 143, 0.397);
+}
+
 .general2 {
     width: 100vw;
     height: 100vh;
@@ -178,6 +189,10 @@
     background-color: rgba(0, 0, 0, 0.74)
 }
 
+.columna1{
+
+margin-left: 5%;
+}
 #attackButton {
     height: 20%;
     width: 80%;

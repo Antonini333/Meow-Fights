@@ -14,16 +14,16 @@ class Fighter {
     attack = (enemy) => {
         
         let damage = this.atk - (enemy.dfs + enemy.luck);
-        damage = damage - this.luck;
+        damage = damage * this.luck;
         
         enemy.HP = enemy.HP - damage;
-        actBarrasVida();
+        actHealthPoints();
         
 
         battleViewer.innerText = 
-        (`${this.name} ataca a 
-        ${atacado.name} y le hace 
-        ${damage} de daño`);
+        (`${this.name} attacks
+        ${enemy.name} and makes 
+        ${damage} of damage`);
     }
 }
 
@@ -34,7 +34,7 @@ class Fighter {
     let f2 = new Fighter ("Garfi", 8, 2, 5, "img/garfiBattle.jpg");
     let f3 = new Fighter ("Grumpy Cat", 8, 2, 5, "img/grumpyBattle.jpg");
     let f4 = new Fighter ("Hover Kitty", 8, 2, 5, "img/hoverkitty.jpg");
-    let f5 = new Fighter ("Lil' Bub", 8, 2, 5, "img/lilbubBattle");
+    let f5 = new Fighter ("Lil' Bub", 8, 2, 5, "img/lilbubBattle.jpg");
     let f6 = new Fighter ("Pudge", 8, 2, 5, 7, "img/pudgeBattle.jpg");
 
         
@@ -126,14 +126,14 @@ let pointedCat = (event) =>{
         
         const attackButton = () => {
 
-            turno++;
+           let turn = 0; turn< 20; turn++;{
         
-            if (turno % 2 === 0) {
+            if (turn === 0,2,4,6,8,10,12,14,16,18,20) {
                 
-                player1.golpear(player2);
+                player1.attack(player2);
                 getCat();
         
             }else{
-               player2.golpear(player1);
+               player2.attack(player1);
                 getCat();
-            }};
+            }}};

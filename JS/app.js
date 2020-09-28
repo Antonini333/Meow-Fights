@@ -42,5 +42,3 @@ const reset = () => {
 }
 
 
-//elenco de funciones útiles que podremos utilizar a nuestro antojo en varios proyectos
-

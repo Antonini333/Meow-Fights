@@ -128,7 +128,7 @@ let pointedCat = (event) =>{
 
            let turn = 0; turn< 20; turn++;{
         
-            if (turn % 2 === 0) {
+            if (turn === 0,2,4,6,8,10,12,14,16,18,20) {
                 
                 player1.attack(player2);
                 getCat();

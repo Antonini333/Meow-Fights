@@ -8,20 +8,21 @@ class Fighter {
         this.dfs = dfs;
         this.luck = luck;
         this.img = img;
-        this.HP = 200;
+        this.HP = 100;
 
     }
+    
     attack = (enemy) => {
         
         let damage = this.atk - (enemy.dfs + enemy.luck);
-        damage = damage * this.luck;
+        damage = damage * random(4,6);
         
         enemy.HP = enemy.HP - damage;
         actHealthPoints();
         
 
         battleViewer.innerText = 
-        (`${this.name} attacks
+        (`${this.name} scratchs
         ${enemy.name} and makes 
         ${damage} of damage`);
     }
@@ -29,14 +30,19 @@ class Fighter {
 
 
 
+let f1 = new Fighter ("Colonel Meow", 8, 2, 5, "img/colonelBattle.png");
+let f2 = new Fighter ("Garfi", 8, 2, 5, "img/garfiBattle.jpg");
+let f3 = new Fighter ("Grumpy Cat", 8, 2, 5, "img/grumpyBattle.jpg");
+let f4 = new Fighter ("Hover Kitty", 8, 2, 5, "img/hoverBattle.png");
+let f5 = new Fighter ("Lil' Bub", 8, 2, 5, "img/lilbubBattle.jpg");
+let f6 = new Fighter ("Pudge", 8, 2, 5, 7, "img/pudgeBattle.png");
 
-    let f1 = new Fighter ("Colonel Meow", 8, 2, 5, "img/colonelBattle.png");
-    let f2 = new Fighter ("Garfi", 8, 2, 5, "img/garfiBattle.jpg");
-    let f3 = new Fighter ("Grumpy Cat", 8, 2, 5, "img/grumpyBattle.jpg");
-    let f4 = new Fighter ("Hover Kitty", 8, 2, 5, "img/hoverkitty.jpg");
-    let f5 = new Fighter ("Lil' Bub", 8, 2, 5, "img/lilbubBattle.jpg");
-    let f6 = new Fighter ("Pudge", 8, 2, 5, 7, "img/pudgeBattle.jpg");
 
+    let player1 = "";
+    let player2 = "";
+    
+    let textChoose = document.getElementById("textChoose");
+    textChoose.innerText = "PLAYER 1: CHOOSE MEOW";
         
  
 //traductor
@@ -60,9 +66,6 @@ const traductor = (id) =>{
     }
 }
 
-
-
-
 let cat1 = document.getElementById("cat1");
 let cat2 = document.getElementById("cat2");
 let cat3 = document.getElementById("cat3");
@@ -71,11 +74,6 @@ let cat5 = document.getElementById("cat5");
 let cat6 = document.getElementById("cat6");
 
 
-let player1 = "";
-let player2 = "";
-
-let textChoose = document.getElementById("textChoose");
-textChoose.innerText = "PLAYER 1: CHOOSE MEOW";
 
 let pointedCat = (event) =>{
    let pointed = event.target.id;
@@ -91,7 +89,7 @@ let pointedCat = (event) =>{
 
    }if (player2 === player1){
     let textChoose = document.getElementById("textChoose");
-    textChoose.innerText = "CAN'T CHOOSE SAME MEOW";
+    textChoose.innerText = "YOU CAN'T CHOOSE THE SAME MEOW";
        cambiaPantalla(2);
    }
      };
@@ -122,13 +120,19 @@ let pointedCat = (event) =>{
 
             document.getElementById("p1HP").style.width = player1.HP + "%";
             document.getElementById("p2HP").style.width = player2.HP + "%";
-        } ;        
+        } ;
+
+        const random = (min, max) =>{
+            return Math.floor(Math.random() * (max - min) + min);
+        }
+
+        let turn = random(1,3);
         
         const attackButton = () => {
 
-           let turn = 0; turn< 20; turn++;{
+           turn++;
         
-            if (turn === 0,2,4,6,8,10,12,14,16,18,20) {
+            if (turn%2 === 0) {
                 
                 player1.attack(player2);
                 getCat();
@@ -136,4 +140,29 @@ let pointedCat = (event) =>{
             }else{
                player2.attack(player1);
                 getCat();
-            }}};
+            } if (player1.HP <= 0 || player2.hp <= 0){
+                 cambiaPantalla(1);
+                 reset();
+                 
+            }
+        
+        };
+
+    let reset = () => {
+
+     f1 = new Fighter ("Colonel Meow", 8, 2, 5, "img/colonelBattle.png");
+     f2 = new Fighter ("Garfi", 8, 2, 5, "img/garfiBattle.jpg");
+     f3 = new Fighter ("Grumpy Cat", 8, 2, 5, "img/grumpyBattle.jpg");
+     f4 = new Fighter ("Hover Kitty", 8, 2, 5, "img/hoverBattle.png");
+     f5 = new Fighter ("Lil' Bub", 8, 2, 5, "img/lilbubBattle.jpg");
+     f6 = new Fighter ("Pudge", 8, 2, 5, 7, "img/pudgeBattle.png");
+
+
+    player1 = "";
+    player2 = "";
+    
+    textChoose = document.getElementById("textChoose");
+    textChoose.innerText = "PLAYER 1: CHOOSE MEOW";
+        }
+        
+

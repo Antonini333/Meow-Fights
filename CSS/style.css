@@ -26,6 +26,7 @@
     border: 0.3em inset black;
     border-radius: 5%;
     background-color: rgba(188, 143, 143, 0.397);
+    animation: blink;
 }
 
 .general2 {
@@ -207,11 +208,14 @@ margin-left: 5%;
     
 }
 
+.attackButton{
+  margin-top: 5em;
+}
 
 #p1Name, #p2Name {
     font-family: Helvetica;
     font-size: xx-large;
-    color: white;
+    color: rgb(0, 0, 0);
     
 }
 
@@ -263,6 +267,7 @@ margin-left: 5%;
 #battleViewer {
     font-size: 1.5em;
     text-align: center;
+    font-size: 22;
     font-family: Arial, Helvetica, sans-serif;
     color: white;
 }

@@ -122,6 +122,7 @@ let pointedCat = (event) =>{
             document.getElementById("p2HP").style.width = player2.HP + "%";
         } ;
 
+
         const random = (min, max) =>{
             return Math.floor(Math.random() * (max - min) + min);
         }
@@ -141,14 +142,14 @@ let pointedCat = (event) =>{
                player2.attack(player1);
                 getCat();
             } if (player1.HP <= 0 || player2.hp <= 0){
-                 cambiaPantalla(1);
+                 cambiaPantalla(4);
                  reset();
                  
             }
         
         };
 
-    let reset = () => {
+    const reset = () => {
 
      f1 = new Fighter ("Colonel Meow", 8, 2, 5, "img/colonelBattle.png");
      f2 = new Fighter ("Garfi", 8, 2, 5, "img/garfiBattle.jpg");

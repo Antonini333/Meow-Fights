@@ -15,12 +15,12 @@ class Fighter {
     attack = (enemy) => {
         
         let damage = this.atk - (enemy.dfs + enemy.luck);
-        damage = damage * random(4,6);
+        damage = damage + random(7,20) - enemy.luck;
         
         enemy.HP = enemy.HP - damage;
         actHealthPoints();
         
-
+       
         battleViewer.innerText = 
         (`${this.name} scratchs
         ${enemy.name} and makes 
@@ -138,16 +138,25 @@ let pointedCat = (event) =>{
                 player1.attack(player2);
                 getCat();
         
-            }else{
-               player2.attack(player1);
-                getCat();
-            } if (player1.HP <= 0 || player2.hp <= 0){
-                 cambiaPantalla(4);
+            
+            } else if (player1.HP < 1 && player2.HP > 0){
+                 cambiaPantalla(1);
                  reset();
-                 
+                 let battleViewer = document.getElementById("battleViewer");
+                 battleViewer.innerText = "PLAYER 2 WINS ";
+                 }
+
+            else if (player1.HP > 0 && player2.HP < 1){
+                cambiaPantalla(1);
+                reset();
+                let battleViewer = document.getElementById("battleViewer");
+                battleViewer.innerText = "PLAYER 2 WINS ";
+             }else{
+                player2.attack(player1);
+                 getCat();
+                };
             }
-        
-        };
+            
 
     const reset = () => {
 
@@ -165,5 +174,9 @@ let pointedCat = (event) =>{
     textChoose = document.getElementById("textChoose");
     textChoose.innerText = "PLAYER 1: CHOOSE MEOW";
         }
+
+
+
+
         
 

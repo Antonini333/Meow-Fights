@@ -133,24 +133,28 @@ let pointedCat = (event) =>{
 
            turn++;
         
-            if (turn%2 === 0) {
+            if (turn%2 === 0 && player2.HP > 1) {
                 
                 player1.attack(player2);
                 getCat();
         
-            
-            } else if (player1.HP < 1 && player2.HP > 0){
-                 cambiaPantalla(1);
-                 reset();
+                
+                
+            }else if (player1.HP <= 0 && player2.HP > 1){
                  let battleViewer = document.getElementById("battleViewer");
                  battleViewer.innerText = "PLAYER 2 WINS ";
+                 document.getElementById("attackButton").style.display = "none";
+                 document.getElementById("continueButton").style.display = "block";
+                 
                  }
 
-            else if (player1.HP > 0 && player2.HP < 1){
-                cambiaPantalla(1);
-                reset();
+            else if (player1.HP > 1 && player2.HP <= 1){
                 let battleViewer = document.getElementById("battleViewer");
-                battleViewer.innerText = "PLAYER 2 WINS ";
+                battleViewer.innerText = "PLAYER 1 WINS ";
+                document.getElementById("attackButton").style.display = "none";
+                document.getElementById("continueButton").style.display = "block";
+                
+
              }else{
                 player2.attack(player1);
                  getCat();
@@ -158,21 +162,28 @@ let pointedCat = (event) =>{
             }
             
 
-    const reset = () => {
+        const continueButton = () => {
 
-     f1 = new Fighter ("Colonel Meow", 8, 2, 5, "img/colonelBattle.png");
-     f2 = new Fighter ("Garfi", 8, 2, 5, "img/garfiBattle.jpg");
-     f3 = new Fighter ("Grumpy Cat", 8, 2, 5, "img/grumpyBattle.jpg");
-     f4 = new Fighter ("Hover Kitty", 8, 2, 5, "img/hoverBattle.png");
-     f5 = new Fighter ("Lil' Bub", 8, 2, 5, "img/lilbubBattle.jpg");
-     f6 = new Fighter ("Pudge", 8, 2, 5, 7, "img/pudgeBattle.png");
+             cambiaPantalla(1);
 
+            f1 = new Fighter ("Colonel Meow", 8, 2, 5, "img/colonelBattle.png");
+            f2 = new Fighter ("Garfi", 8, 2, 5, "img/garfiBattle.jpg");
+            f3 = new Fighter ("Grumpy Cat", 8, 2, 5, "img/grumpyBattle.jpg");
+            f4 = new Fighter ("Hover Kitty", 8, 2, 5, "img/hoverBattle.png");
+            f5 = new Fighter ("Lil' Bub", 8, 2, 5, "img/lilbubBattle.jpg");
+            f6 = new Fighter ("Pudge", 8, 2, 5, 7, "img/pudgeBattle.png");
+       
+       
+           player1 = "";
+           player2 = "";
+           
+           textChoose = document.getElementById("textChoose");
+           textChoose.innerText = "PLAYER 1: CHOOSE MEOW";
+           battleViewer = document.getElementById("battleViewer");
+           battleViewer.innerText = " ";
+           document.getElementById("attackButton").style.display = "block";
+           document.getElementById("continueButton").style.display = "none";
 
-    player1 = "";
-    player2 = "";
-    
-    textChoose = document.getElementById("textChoose");
-    textChoose.innerText = "PLAYER 1: CHOOSE MEOW";
         }
 
 

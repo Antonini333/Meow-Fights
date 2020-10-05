@@ -215,6 +215,20 @@ margin-left: 5%;
   width: 20em;
   border-radius: 5000em;
   box-shadow: inset seashell 0.2em 0.2em 1.7em 0.8em;
+  display: block;
+}
+
+.continueButton{
+    font-size: x-large;
+    font-weight: bolder;
+  margin: 8em 3em 0em 0em;
+  border: 0.4em groove rgba(31, 22, 22, 0.801);
+  background-color: rgba(235, 26, 189, 0.705);
+  height: 7em;
+  width: 12em;
+  border-radius: 5000em;
+  box-shadow: inset seashell 0.2em 0.2em 1.7em 0.8em;
+  display: none;
 }
 
 #p1Name, #p2Name {

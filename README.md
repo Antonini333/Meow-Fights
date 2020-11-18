@@ -1,6 +1,6 @@
 # FightGame
 
- https://antonini333.github.io/juegoLucha/
+Deployed at: https://antonini333.github.io/juegoLucha/
 
 This is a basic project made out of HTML5, CSS3 and simple Javascript.
 
